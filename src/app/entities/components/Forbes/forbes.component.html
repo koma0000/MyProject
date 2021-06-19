@@ -1,0 +1,47 @@
+<h1>Forbes</h1>
+<button (click)="toogleTagA()">Сортиовка по алфавиту</button>
+<button (click)="toogleTagDesc()">Сортиовка по возрастанию</button>
+<button (click)="toogleTagAsc()">Сортиовка по убыванию</button>
+<button (click)="toogleTagBaz()" > Базовая </button>
+<br>
+Фамилиии  и Чистая прибыль
+<br>
+<div *ngIf="ShowBaz">
+<div *ngIf="names">
+  <div *ngFor=" let name of names | keyvalue " >
+    {{name.key}}:
+    {{name.value}}
+  </div>
+</div>
+</div>
+
+
+<div *ngIf="ShowA">
+<div *ngIf="names">
+<div *ngFor=" let name of names | keyvalue: valueAscOrder " >
+  {{name.key}}:
+{{name.value}}
+</div>
+</div>
+</div>
+
+<div *ngIf="ShowDesc">
+<div *ngIf="names">
+  <div *ngFor=" let name of names | keyvalue: keyDescOrder" >
+    {{name.key}}:
+    {{name.value}}
+  </div>
+</div>
+</div>
+
+<div *ngIf="ShowAsc">
+<div *ngIf="names">
+  <div *ngFor=" let name of names | keyvalue: keyAskOrder" >
+    {{name.key}}:
+    {{name.value}}
+  </div>
+</div>
+</div>
+
+
+

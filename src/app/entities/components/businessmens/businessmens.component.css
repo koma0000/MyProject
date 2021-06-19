@@ -1,0 +1,122 @@
+.addSubmit:hover {
+    background-color:grey;
+}
+
+.addSubmit {
+    width: 100%;
+    background-color: black;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.DisabledSubmit{
+    width: 100%;
+    background-color: rgb(148, 122, 122);
+    color: rgb(14, 14, 14);
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.ADDBLOCK {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    width: 30%;
+}
+
+
+.textbox, select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.textbox:focus {
+    border: 1px solid #555;
+}
+
+
+.atribLabel {
+    color: rgb(36, 32, 32);
+    font-family: 'Molengo', Georgia, Times, serif;
+}
+
+.addtext {
+    color: rgb(36, 32, 32);
+    font-family: 'Raleway', Helvetica, Arial, sans-serif;
+    font-size: 28px;
+
+}
+
+.search{
+    width: 10%;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 12px 12px 12px;
+    transition: width 0.4s ease-in-out;
+    margin-bottom: 20px;
+}
+
+.search:focus {
+    width: calc(30% + 40px - 100px);
+}
+
+.searchsubmit {
+    margin-left: 20px;
+    width: 80px;
+    background-color: black;
+    color: white;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.searchsubmit:hover {
+    background-color:grey;
+}
+
+hr {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border: none; 
+    background-color: grey; 
+    color: grey; 
+    height: 2px; 
+    width: 18%;
+    float: left;
+}
+
+
+.ErrorAge {
+    color: rgb(36, 32, 32);
+}
+
+.Item {
+    float: left;
+    width: calc(50% - 81px);
+    margin:15px;
+    border-color: grey;
+    border-radius: 4px;
+    border-style: solid;
+    background-color: rgb(26, 26, 26); 
+    box-shadow: 0 0 4px #A9A9A9; 
+    height: 100px;
+    padding: 20px;
+    color: white;
+}

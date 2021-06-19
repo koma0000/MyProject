@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatDrawer } from '@angular/material/sidenav';
+
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'MyProject';
+  title = 'Main';
+  public sidenav!: MatDrawer ;
+  // tslint:disable-next-line:typedef
+  public setSidenav(sidenav: MatDrawer) {
+    this.sidenav = sidenav;
+  }
 }

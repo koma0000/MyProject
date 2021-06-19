@@ -1,0 +1,52 @@
+<h1>{{title}}</h1>
+
+<input type="text" class="search" name="search" placeholder="Search from id.." [(ngModel)]="searchId">
+<button class="searchsubmit" type="submit" value="Search" (click)="SetClick()">Search</button>
+
+<div class="ADDBLOCK">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Molengo" rel="stylesheet">
+
+    <a class="addtext">Add Businessmen</a>
+    <br>
+
+    <div class="Atribs">
+        <label class="atribLabel" for="b_name">Name</label>
+        <input type="text" class="textbox" id="b_name" name="b_name" placeholder="Enter the name of the businessmen" [(ngModel)]="nameinput">
+        <label class="atribLabel" for="b_surname">Surname</label>
+        <input type="text" class="textbox" id="b_surname" name="b_surname" placeholder="Enter the surname of the businessmen" [(ngModel)]="surnameinput">
+        <label class="atribLabel" for="b_age">Age</label>
+        <input type="text" class="textbox" id="b_age" name="b_age" placeholder="Enter the age of the businessmen" [(ngModel)]="ageinput">
+
+        <div *ngIf="checkAge(); then thenBlock else elseBlock"></div>
+        <ng-template #thenBlock><button class="addSubmit" (click)="AddBusinessmen()">Submit</button></ng-template>
+        <ng-template #elseBlock><button disabled class="DisabledSubmit">Submit</button>
+        <label class="ErrorAge" >{{ageerror}}</label></ng-template>
+
+    </div>
+
+</div>
+
+<hr>
+<br>
+<br>
+
+<!-- <input type="text" class="search" name="search" placeholder="Search by name..." [(ngModel)]="searchName">
+<button class="searchsubmit" type="submit"  (click)="GetByName()">Search</button> -->
+
+
+<div class="ItemsList">
+     <div class="Item" *ngFor="let i of businessmensList.slice().reverse()" id="{{i.id}}" click="GoToItem(i.id)"> <!--Тут мы перебириаем элементы массива и выводим их -->
+      <label class="ItemMainLabel" style="font-size: 28px"> ID: {{i.id}} </label>
+      <br>
+       <label class="ItemOtherLabel" style="font-size: 20px">Name: {{i.name}}</label>
+      <br>
+      <label class="ItemOtherLabel" style="font-size: 20px">Surname: {{i.surname}}</label>
+      <br>
+      <label class="ItemOtherLabel" style="font-size: 20px">Age: {{i.age}}</label>
+       <br class="ItemOtherLabel"> <button class="addSubmit" (click) ="GoToItem(i.id)">Просмотреть</button>
+    </div>
+  <br>
+  <br>
+</div>
+

@@ -1,0 +1,45 @@
+<h1>{{title}}</h1>
+
+<!-- <input type="text" class="search" name="search" placeholder="Search from id.." [(ngModel)]="searchId"> -->
+<!-- <button class="searchsubmit" type="submit" value="Search" (click)="SetClick()">Search</button> -->
+
+<div class="ADDBLOCK">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Molengo" rel="stylesheet">
+
+    <a class="addtext">Add Company</a>
+    <br>
+
+    <div class="Atribs">
+        <label class="atribLabel" for="c_name">Name</label>
+        <input type="text" class="textbox" id="c_name" name="c_name" placeholder="Enter the name of the company" [(ngModel)]="nameinput">
+        <label class="atribLabel" for="c_proceeds">Proceeds</label>
+        <input type="text" class="textbox" id="c_proceeds" name="c_proceeds" placeholder="Enter the proceeds of the company" [(ngModel)]="proceedsinput">
+        <label class="atribLabel" for="c_profit">Profit</label>
+        <input type="text" class="textbox" id="c_profit" name="c_profit" placeholder="Enter the profit of the company" [(ngModel)]="profitinput">
+
+        <div *ngIf="CheckAtribs(); then thenBlock else elseBlock"></div>
+        <ng-template #thenBlock><button class="addSubmit" (click)="AddCompany()">Submit</button></ng-template>
+        <ng-template #elseBlock><button disabled class="DisabledSubmit">Submit</button>
+        <label class="Error" >{{error}}</label></ng-template>
+
+    </div>
+</div>
+
+
+  <br>
+  <br>
+
+  <div class="ItemsList">
+    <div class="Item" *ngFor="let i of CompanysList.slice().reverse()" id="{{i.id}}" click="GoToItem(i.id)"> <!--Тут мы перебириаем элементы массива и выводим их -->
+      <label class="ItemMainLabel" style="font-size: 28px"> ID: {{i.id}} </label>
+      <br>
+      <label class="ItemOtherLabel" style="font-size: 20px">Name: {{i.name}}</label>
+      <br>
+      <label class="ItemOtherLabel" style="font-size: 20px">Proceeds: {{i.proceeds}}</label>
+      <br>
+      <label class="ItemOtherLabel" style="font-size: 20px">Profit: {{i.profit}}</label>
+      <br class="ItemOtherLabel"> <button class="addSubmit" (click) ="GoToItem(i.id)">Просмотреть</button>
+    </div>
+
+</div>
